@@ -1,0 +1,12 @@
+{
+  "name": "MarkdownUploadServer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/burritoOverflow/MDtoPrettyHtmlServer.git",
+  "author": "burritoOverflow <rschuman@ramapo.edu>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  }
+}
