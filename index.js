@@ -8,6 +8,7 @@ const app = express();
 
 const zipFile = __dirname + "/output.zip";
 const outputDir = "output";
+const inputDir = __dirname + "/input";
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
@@ -71,4 +72,8 @@ app.post("/upload", upload.single("upl"), (req, res) => {
   }
 });
 
-app.listen(9000, () => console.log("App running on port 9000"));
+app.listen(9000, () => {
+  if (!fs.existsSync(inputDir)) {
+    fs.mkdirSync(inputDir);
+  }
+});
