@@ -5,6 +5,7 @@ const path = require("path");
 const { exec } = require("child_process");
 
 const app = express();
+app.use(express.static("public"));
 
 const zipFile = __dirname + "/output.zip";
 const outputDir = "output";
@@ -42,7 +43,7 @@ const deleteDirRecursive = path => {
 };
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/static/html/index.html");
+  res.sendFile(__dirname + "/public/html/index.html");
 });
 
 app.post("/upload", upload.single("upl"), (req, res) => {

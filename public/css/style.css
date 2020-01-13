@@ -1,0 +1,27 @@
+h1 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+  margin: auto;
+  width: 65%;
+  border: 1px solid black;
+  padding: 10px;
+  background-color: rgb(185, 181, 181);
+  box-shadow: 2px 2px 2px 1px rgba(4, 12, 7, 0.2);
+}
+
+form:hover {
+  background-color: ghostwhite;
+}
+
+div > input[type="submit"] {
+  color: white;
+  background-color: rgb(39, 41, 41);
+  border-radius: 12px;
+}
+
+div > input[type="submit"]:hover {
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.2);
+}
