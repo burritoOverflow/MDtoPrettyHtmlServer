@@ -1,6 +1,7 @@
 FROM node:10.13-alpine
 ENV NODE_ENV production
 WORKDIR /usr/src/app
+RUN apt-get install zip unzip
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 RUN npm install --global --unsafe-perm exp markdown-styles
 RUN npm install  && mv node_modules ../
