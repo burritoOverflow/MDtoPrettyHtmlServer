@@ -47,6 +47,7 @@ app.get("/", (req, res) => {
 });
 
 app.post("/upload", upload.single("upl"), (req, res) => {
+  const uplFile = req.file.originalname;
   try {
     exec(
       "generate-md --layout github --input ./input --output ./output && zip -r output.zip output",
@@ -60,7 +61,7 @@ app.post("/upload", upload.single("upl"), (req, res) => {
             if (err) {
               res.send("Error");
             } else {
-              deleteFiles([__dirname + "/input/index.md", "output.zip"]);
+              deleteFiles([__dirname + "/input/" + uplFile, "output.zip"]);
               deleteDirRecursive(outputDir);
             }
           });
